@@ -193,7 +193,16 @@ body {
   margin-bottom: 25px;
 }
 
+/* 🔹 Form Layout Updated */
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
 .register-card input {
+  width: 100%;
   border: 1px solid #444;
   border-radius: 10px;
   padding: 12px;
@@ -214,12 +223,13 @@ body {
   color: var(--primary-color);
   border: none;
   border-radius: 10px;
-  padding: 12px;
+  padding: 12px 40px;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 10px;
+  align-self: center; /* 🔹 Center button */
 }
 
 .register-card button:hover {
@@ -227,6 +237,7 @@ body {
   color: var(--text-dark);
   transform: scale(1.03);
 }
+
 
 /* ===== Footer ===== */
 footer {
