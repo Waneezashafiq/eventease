@@ -249,6 +249,29 @@ footer {
   margin-top: 50px;
   border-top: 1px solid #333;
 }
+/* ===== Confirmation Page Button Styling ===== */
+.confirm-btn {
+  background: linear-gradient(to right, #facc15, #d4af37); /* golden gradient */
+  color: #000;
+  font-weight: 600;
+  padding: 12px 28px; /* balanced padding */
+  border: 2px solid #b8860b;
+  border-radius: 12px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  display: inline-block; /* 
+  margin-top: 10px;
+  text-align: left; /* aligns text properly */
+}
+
+.confirm-btn:hover {
+  background: linear-gradient(to right, #000, #333);
+  color: #facc15;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.6);
+}
 
 /* 📱 Responsive */
 @media (max-width: 768px) {
