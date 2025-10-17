@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/global.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Confirmation = () => {
@@ -35,11 +36,9 @@ const Confirmation = () => {
           </p>
         </div>
 
-        <button
-          onClick={() => navigate("/")}
-          className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold py-3 rounded-xl text-lg shadow-lg border border-yellow-700 hover:from-black hover:to-gray-900 hover:text-yellow-400 transition-all duration-300"
-        >
-           Back to Events
+        {/* Custom CSS Class Added */}
+        <button onClick={() => navigate("/")} className="confirm-btn">
+          Back to Events
         </button>
       </div>
     </div>
