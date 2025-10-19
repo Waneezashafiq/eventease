@@ -18,16 +18,23 @@ const MyRegistrations = () => {
           {registrations.map((r, idx) => (
             <div key={idx} className="event-card">
               <img
-                src={r.event.image}
-                alt={r.event.name}
+                src={
+                  r.image ||
+                  "https://via.placeholder.com/400x250?text=Event+Image"
+                }
+                alt={r.eventName || "Event"}
                 className="event-image"
               />
+
               <div className="event-info">
-                <h2 className="event-name">{r.event.name}</h2>
+                <h2 className="event-name">{r.eventName}</h2>
+
                 <div className="event-details">
-                  <p>📅 {r.event.date}</p>
-                  <p>📍 {r.event.location}</p>
+                  <p>📅 <strong>Date:</strong> {r.date || "N/A"}</p>
+                  <p>📍 <strong>Location:</strong> {r.location || "N/A"}</p>
+                  <p>🆔 <strong>Event ID:</strong> {r.eventId}</p>
                 </div>
+
                 <div className="registrant-info">
                   <p>
                     <strong>👤 Name:</strong> {r.name}
