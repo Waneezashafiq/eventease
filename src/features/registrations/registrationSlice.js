@@ -27,27 +27,30 @@ const registrationSlice = createSlice({
   name: "registrations",
   initialState,
   reducers: {
+    // ✅ Add Registration (Prevent duplicate for same event only)
     addRegistration: (state, action) => {
-      // check if registration already exists (by email + event id)
-      const exists = state.registrations.some(
+      const existing = state.registrations.some(
         (r) =>
           r.email === action.payload.email &&
-          r.event.id === action.payload.event.id
+          r.phone === action.payload.phone &&
+          r.eventId === action.payload.eventId
       );
 
-      if (!exists) {
+      if (!existing) {
         state.registrations.push(action.payload);
-        saveToLocalStorage(state.registrations); // ✅ immediately save updated state
+        saveToLocalStorage(state.registrations);
       }
     },
 
+    // ✅ Remove specific registration
     removeRegistration: (state, action) => {
       state.registrations = state.registrations.filter(
-        (r) => r.event.id !== action.payload
+        (r) => r.eventId !== action.payload
       );
       saveToLocalStorage(state.registrations);
     },
 
+    // ✅ Clear all registrations
     clearRegistrations: (state) => {
       state.registrations = [];
       localStorage.removeItem("registrations");
